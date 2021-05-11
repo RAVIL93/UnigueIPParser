@@ -2,13 +2,11 @@ package com.redplanet.core;
 
 public class Ip implements Comparable<Ip>{
     String ip;
-    long position;
     long counter = 1;
 
 
-    public Ip(String ip , long position) {
+    public Ip(String ip ) {
         this.ip = ip;
-        this.position = position;
     }
 
 

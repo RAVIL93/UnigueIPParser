@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileReader implements Closeable {
-    static int currentPosition = 0;
 
     BufferedReader reader = null;
 
@@ -33,7 +32,7 @@ public class FileReader implements Closeable {
 
         while ((s = reader.readLine()) != null) {
             if (counter < linesCount) {
-                list.add(new Ip(s, currentPosition++));
+                list.add(new Ip(s));
                 counter++;
 
             } else break;
