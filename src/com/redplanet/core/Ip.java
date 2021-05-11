@@ -44,7 +44,7 @@ public class Ip implements Comparable<Ip>{
         if ( this.hashCode() < ip.hashCode() ) {
             return -1;
         } else if (this.hashCode() > ip.hashCode())
-            return +1;
+            return 1;
         return 0;
     }
 
