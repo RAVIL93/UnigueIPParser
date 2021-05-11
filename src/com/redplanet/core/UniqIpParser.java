@@ -47,8 +47,9 @@ public class UniqIpParser {
                         count += arrays[j][i].getCounter();
                     }
                 }
-                if (count == 1 && uniqueIp != null)
+                if (count == 1 && uniqueIp != null) {
                     System.out.println(uniqueIp.getIp());
+                }
             }
 
         } catch (IOException e) {
