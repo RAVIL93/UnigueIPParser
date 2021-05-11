@@ -40,7 +40,9 @@ public class UniqIpParser {
                 int count = 0;
                 Ip uniqueIp = null;
                 for (int j = 0; j < 4; j++) {
-                    if (arrays[j][i] != null) {
+                    if (count > 1) {
+                        break;
+                    } else if (arrays[j][i] != null) {
                         uniqueIp = arrays[j][i];
                         count += arrays[j][i].getCounter();
                     }

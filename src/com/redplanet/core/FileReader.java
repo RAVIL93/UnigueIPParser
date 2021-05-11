@@ -38,8 +38,6 @@ public class FileReader implements Closeable {
                 break;
 
         }
-        buffer.forEach(System.out::print);
-        System.out.println();
         return buffer;
     }
 

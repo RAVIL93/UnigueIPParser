@@ -14,7 +14,7 @@ public class RandomIpWriter {
     public void writeIps() {
         try (FileWriter fileWriter = new FileWriter(filename)) {
             Random random = new Random();
-            for (long i = 0; i < 15500; i++)
+            for (long i = 0; i < 2000000000; i++)
                 fileWriter.nioWriteFile("192.168." + random.nextInt(10) +"."+ random.nextInt(255));
 
             fileWriter.nioWriteFile("5.6.8.9");
