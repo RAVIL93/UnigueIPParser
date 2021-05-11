@@ -32,7 +32,8 @@ public class FileWriter implements Closeable {
 
     @Override
     public void close() throws IOException {
-        if (writer != null)
+        if (writer != null) {
             writer.close();
+        }
     }
 }

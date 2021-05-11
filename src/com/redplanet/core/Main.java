@@ -11,7 +11,7 @@ public class Main {
         //RandomIpWriter randomIpWriter = new RandomIpWriter(BIG_FILE);
         //randomIpWriter.writeIps();
 
-       UniqIpParser uniqIpParser = new UniqIpParser(BIG_FILE);
+        UniqIpParser uniqIpParser = new UniqIpParser(BIG_FILE);
         uniqIpParser.parse();
 
     }

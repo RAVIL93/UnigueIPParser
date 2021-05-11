@@ -2,7 +2,7 @@ package com.redplanet.core;
 
 public class Ip implements Comparable<Ip>{
     String ip;
-    long counter = 1;
+    long counter = 0;
 
 
     public Ip(String ip ) {
@@ -15,7 +15,6 @@ public class Ip implements Comparable<Ip>{
         final String[] split = ip.split("\\.");
         int hashCode = 1;
         for (String s: split) {
-
             hashCode = 31 * hashCode + Integer.parseInt(s);
         }
         return hashCode;
@@ -26,38 +25,39 @@ public class Ip implements Comparable<Ip>{
 
     @Override
     public boolean equals(Object obj) {
-        if (super.equals(obj))
+        if (super.equals(obj)) {
             return true;
-        else if (this.hashCode() == ((Ip) obj).hashCode())
+        }
+        else if (this.hashCode() == ((Ip) obj).hashCode()) {
             return true;
-        else return this.ip.equals(((Ip) obj).getIp());
+        }
+        else  {
+            return this.ip.equals(((Ip) obj).getIp());
+        }
+
     }
 
     public String getIp() {
         return ip;
     }
 
-
+    public long getCounter() {
+        return counter;
+    }
 
     @Override
     public int compareTo(Ip ip) {
         if ( this.hashCode() < ip.hashCode() ) {
             return -1;
-        } else if (this.hashCode() > ip.hashCode())
+        } else if (this.hashCode() > ip.hashCode()) {
             return 1;
+        }
         return 0;
     }
 
-    public long getCounter() {
-        return counter;
-    }
-
-    public void setCounter(long counter) {
-        this.counter = counter;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
+    public Ip increase() {
+        this.counter++;
+        return this;
     }
 
     @Override

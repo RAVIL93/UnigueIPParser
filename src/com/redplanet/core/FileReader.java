@@ -25,24 +25,28 @@ public class FileReader implements Closeable {
             e.printStackTrace();
         }
     }
+
     public List<Ip> nioReadFile(int linesCount) throws IOException {
         String s;
-        int counter = 0;
-        List<Ip> list = new ArrayList<>();
+        int counter = 1;
+        List<Ip> buffer = new ArrayList<>();
 
         while ((s = reader.readLine()) != null) {
-            if (counter < linesCount) {
-                list.add(new Ip(s));
-                counter++;
+            buffer.add(new Ip(s));
+            counter++;
+            if (counter > linesCount)  // проверяем после того как считали и обработали строку
+                break;
 
-            } else break;
         }
-        return list;
+        buffer.forEach(System.out::print);
+        System.out.println();
+        return buffer;
     }
 
     @Override
     public void close() throws IOException {
-        if (reader != null)
+        if (reader != null) {
             reader.close();
+        }
     }
 }
