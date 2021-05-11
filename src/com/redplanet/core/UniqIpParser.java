@@ -29,12 +29,11 @@ public class UniqIpParser {
             System.out.println("Reading begin");
             while (!(ips = fileReader.nioReadFile(LINES_COUNT)).isEmpty()) {
 
+                if (array1[ips.get(0).hashCode()] != null)
+                    array1[ips.get(0).hashCode()].setCounter(array1[ips.get(0).hashCode()].getCounter() + 1);
+                else
+                    array1[ips.get(0).hashCode()] = ips.get(0);
 
-                if (ips.size() > 0)
-                    if (array1[ips.get(0).hashCode()] != null)
-                        array1[ips.get(0).hashCode()].setCounter(array1[ips.get(0).hashCode()].getCounter() + 1);
-                    else
-                        array1[ips.get(0).hashCode()] = ips.get(0);
                 if (ips.size() > 1)
                     if (array2[ips.get(1).hashCode()] != null)
                         array2[ips.get(1).hashCode()].setCounter(array2[ips.get(1).hashCode()].getCounter() + 1);
