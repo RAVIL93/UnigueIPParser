@@ -1,10 +1,10 @@
 package ru.redplanet.ipparser;
 
-public class Ip implements Comparable<Ip>{
+public class Ip implements Comparable<Ip> {
     String ip;
     long counter = 0;
 
-    public Ip(String ip ) {
+    public Ip(String ip) {
         this.ip = ip;
     }
 
@@ -12,7 +12,7 @@ public class Ip implements Comparable<Ip>{
     public int hashCode() {
         final String[] split = ip.split("\\.");
         int hashCode = 1;
-        for (String s: split) {
+        for (String s : split) {
             hashCode = 31 * hashCode + Integer.parseInt(s);
         }
         return hashCode;
@@ -23,11 +23,9 @@ public class Ip implements Comparable<Ip>{
     public boolean equals(Object obj) {
         if (super.equals(obj)) {
             return true;
-        }
-        else if (this.hashCode() == ((Ip) obj).hashCode()) {
+        } else if (this.hashCode() == ((Ip) obj).hashCode()) {
             return true;
-        }
-        else  {
+        } else {
             return this.ip.equals(((Ip) obj).getIp());
         }
 
@@ -43,7 +41,7 @@ public class Ip implements Comparable<Ip>{
 
     @Override
     public int compareTo(Ip ip) {
-        if ( this.hashCode() < ip.hashCode() ) {
+        if (this.hashCode() < ip.hashCode()) {
             return -1;
         } else if (this.hashCode() > ip.hashCode()) {
             return 1;
@@ -58,6 +56,6 @@ public class Ip implements Comparable<Ip>{
 
     @Override
     public String toString() {
-        return "Ip = "+ ip;
+        return "Ip = " + ip;
     }
 }

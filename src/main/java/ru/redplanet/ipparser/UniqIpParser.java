@@ -1,11 +1,10 @@
 package ru.redplanet.ipparser;
+
 import java.io.IOException;
 import java.util.List;
 
 public class UniqIpParser {
     private final String filename;
-
-
     private final static int BUFFER_SIZE = 16;
     private final static int MAX_IP_HASH_VALUE = 8773442;
 
@@ -32,9 +31,7 @@ public class UniqIpParser {
                     arrays[0][ips.get(i).hashCode()] = ips.get(i).increase();
                 }
             }
-
             System.out.println("Reading done");
-
             for (int i = 0; i < MAX_IP_HASH_VALUE; i++) {
                 int count = 0;
                 Ip uniqueIp = null;
@@ -50,14 +47,9 @@ public class UniqIpParser {
                     System.out.println(uniqueIp.getIp());
                 }
             }
-
         } catch (IOException e) {
             System.out.println("Something wrong with file");
             e.printStackTrace();
         }
-
-
     }
-
-
 }

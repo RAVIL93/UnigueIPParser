@@ -2,8 +2,6 @@ package ru.redplanet.ipparser;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class UniqIpParserTest {
 
     @Test
@@ -14,8 +12,6 @@ public class UniqIpParserTest {
         uniqIpParser.parse();
         long end = System.currentTimeMillis();
         System.out.println("DEBUG: parse_first_test took " + (end - start) + " MilliSeconds");
-
-
 
     }
 }
