@@ -1,4 +1,4 @@
-package com.redplanet.core;
+package ru.redplanet.ipparser;
 
 import java.io.BufferedWriter;
 import java.io.Closeable;
@@ -26,7 +26,9 @@ public class FileWriter implements Closeable {
     }
 
     public void nioWriteFile(String str) throws IOException {
-        writer.write(str+"\n");
+        if (str != null) {
+            writer.write(str + "\n");
+        }
     }
 
 

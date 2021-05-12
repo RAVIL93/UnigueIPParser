@@ -1,5 +1,4 @@
-package com.redplanet.core;
-
+package ru.redplanet.ipparser;
 import java.io.IOException;
 import java.util.List;
 

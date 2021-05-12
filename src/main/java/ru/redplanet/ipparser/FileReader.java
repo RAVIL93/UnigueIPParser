@@ -1,4 +1,4 @@
-package com.redplanet.core;
+package ru.redplanet.ipparser;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class FileReader implements Closeable {
 

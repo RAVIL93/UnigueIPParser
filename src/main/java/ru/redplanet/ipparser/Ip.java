@@ -1,14 +1,12 @@
-package com.redplanet.core;
+package ru.redplanet.ipparser;
 
 public class Ip implements Comparable<Ip>{
     String ip;
     long counter = 0;
 
-
     public Ip(String ip ) {
         this.ip = ip;
     }
-
 
     @Override
     public int hashCode() {
@@ -19,8 +17,6 @@ public class Ip implements Comparable<Ip>{
         }
         return hashCode;
     }
-
-
 
 
     @Override
