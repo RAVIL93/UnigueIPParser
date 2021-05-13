@@ -21,7 +21,7 @@ public class RandomIpWriter {
 
             fileWriter.nioWriteFile(uniqueIps.poll());
             for (long i = 0; i < maxIpLines; i++) {
-                fileWriter.nioWriteFile(FIRST_IP_MASK + random.nextInt(255) + "." + random.nextInt(255));
+                fileWriter.nioWriteFile(FIRST_IP_MASK + random.nextInt(3) + "." + random.nextInt(255));
                 if (i == position - 1) {
                     fileWriter.nioWriteFile(uniqueIps.poll());
                     position += delta;

@@ -19,6 +19,11 @@ public class UniqIpParser {
 
             System.out.println("Reading begin");
 
+            // пока не конец файла, загружаем по 16 строк
+            // преобразовываем  каждый ip в хеш и используем этот хеш как индекс в последующих четырех массивах
+            // для записи объекта Ip c кол-вом повторений на i-тую позицию, где индекс == хеш Ip
+            // максимальная длина массива  MAX_IP_HASH_VALUE = 8773442 - хеш числа 255.255.255.255
+
             while (!(ips = fileReader.nioReadFile(BUFFER_SIZE)).isEmpty()) {
                 int i = 0;
                 for (; i < ips.size() - 3; i += 4) {
@@ -31,7 +36,11 @@ public class UniqIpParser {
                     arrays[0][ips.get(i).hashCode()] = ips.get(i).increase();
                 }
             }
+
             System.out.println("Reading done");
+
+            // Пробегаем по всем индексам и суммируем кол-во повторений взятого с i-той позиции каждого из четырех массивов
+            // если кол-во повторения count == 1 , значит ip уникальный , выводим его.
             for (int i = 0; i < MAX_IP_HASH_VALUE; i++) {
                 int count = 0;
                 Ip uniqueIp = null;
