@@ -21,7 +21,7 @@ public class UniqIpParserTest {
         uniqueIps.offer("33.5.7.4");
 
         long start = System.currentTimeMillis();
-        ipWriter.writeIps(3000,uniqueIps);
+        ipWriter.writeIps(3000, uniqueIps);
         long end = System.currentTimeMillis();
         System.out.println("DEBUG: writeIps_test took " + (end - start) + " MilliSeconds");
 

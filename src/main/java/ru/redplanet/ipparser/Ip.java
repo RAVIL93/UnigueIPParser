@@ -2,7 +2,7 @@ package ru.redplanet.ipparser;
 
 public class Ip implements Comparable<Ip> {
     String ip;
-    long counter ;
+    long counter;
 
     public Ip(String ip) {
         this.ip = ip;
@@ -23,7 +23,7 @@ public class Ip implements Comparable<Ip> {
     public boolean equals(Object obj) {
         if (super.equals(obj)) {
             return true;
-        } else if (this.hashCode() ==  obj.hashCode()) {
+        } else if (this.hashCode() == obj.hashCode()) {
             return true;
         } else {
             return this.ip.equals(((Ip) obj).getIp());
